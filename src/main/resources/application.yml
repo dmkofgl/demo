@@ -1,3 +1,8 @@
 spring:
   profiles:
-    active: h2
+    active:  database-common, h2, liquibase
+logging:
+  level:
+    org:
+      hibernate:
+        type: TRACE

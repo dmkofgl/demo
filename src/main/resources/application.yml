@@ -1,3 +1,8 @@
 spring:
   profiles:
     active: h2
+logging:
+  level:
+    com:
+      dl:
+        demo: DEBUG

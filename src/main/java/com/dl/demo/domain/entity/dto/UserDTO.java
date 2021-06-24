@@ -1,13 +1,10 @@
 package com.dl.demo.domain.entity.dto;
 
-import lombok.*;
+import lombok.Builder;
+import lombok.Data;
 
+@Data
 @Builder
-@NoArgsConstructor
-@AllArgsConstructor
-@Getter
-@Setter
-@EqualsAndHashCode
 public class UserDTO {
     private String username;
     private String email;

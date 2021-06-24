@@ -6,10 +6,11 @@ import com.dl.demo.domain.entity.dto.UserDTO;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
+import org.mapstruct.NullValuePropertyMappingStrategy;
 
 import java.util.Collection;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring",nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
 public interface UserMapper {
     @Mapping(target = "id", ignore = true)
     User fromDTO(UserDTO user);
@@ -18,5 +19,5 @@ public interface UserMapper {
 
     Collection<UserResponse> toUserResponse(Collection<User> user);
 
-    User update(@MappingTarget User user, UserDTO userDTO);
+    void update(@MappingTarget User user, UserDTO userDTO);
 }

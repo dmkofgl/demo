@@ -6,3 +6,9 @@ logging:
     com:
       dl:
         demo: DEBUG
+server:
+  port: 9001
+client:
+  auth:
+    name: auth
+    url: http://localhost:9002

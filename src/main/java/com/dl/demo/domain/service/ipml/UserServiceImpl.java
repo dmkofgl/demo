@@ -1,10 +1,10 @@
 package com.dl.demo.domain.service.ipml;
 
 import com.dl.demo.domain.entity.User;
-import com.dl.demo.domain.entity.dto.UserDTO;
 import com.dl.demo.domain.mapper.UserMapper;
 import com.dl.demo.domain.repository.UserRepository;
 import com.dl.demo.domain.service.UserService;
+import com.example.common.api.model.user.UserDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -31,6 +31,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public User findById(Long id) {
         return userRepository.findById(id).orElseThrow(EntityNotFoundException::new);
+    }
+
+    @Override
+    public User findByEmail(String email) {
+        return userRepository.findByEmail(email).orElseThrow(EntityNotFoundException::new);
     }
 
     @Override
